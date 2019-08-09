@@ -23,6 +23,15 @@ bool IrRemote_I2C::begin() {
     return _exist;
 }
 
+bool IrRemote_I2C::checkExist()
+{
+  Wire.beginTransmission(_address);
+  if (Wire.endTransmission() == 0) {
+      _exist = true;
+  }
+  return _exist;
+}
+
 bool IrRemote_I2C::exist() 
 {
     return _exist;

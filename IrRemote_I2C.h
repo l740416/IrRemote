@@ -53,6 +53,7 @@ class IrRemote_I2C
 #else
     bool begin();
 #endif
+    bool checkExist();
     bool exist();
     uint32_t Info()                     { return read32(CMD_INFO); }
     uint8_t  MajorVer(uint32_t info)    { return (info >>  4) & 0x0F;}
